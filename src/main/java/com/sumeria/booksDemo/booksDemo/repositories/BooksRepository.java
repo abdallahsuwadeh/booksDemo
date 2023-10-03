@@ -11,5 +11,7 @@ public interface BooksRepository {
 
     Book getBookByTitle(String title);
 
+    Book getBookByAuthor(String author);
+
     boolean deleteBookByTitle(String title);
 }

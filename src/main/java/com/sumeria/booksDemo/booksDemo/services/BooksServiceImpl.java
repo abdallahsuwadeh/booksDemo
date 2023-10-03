@@ -32,6 +32,11 @@ public class BooksServiceImpl implements BooksService {
     }
 
     @Override
+    public Book getBookByAuthor(String author){
+        return repository.getBookByAuthor(author);
+    }
+
+    @Override
     public boolean deleteBookByTitle(String title){
         return repository.deleteBookByTitle(title);
     }

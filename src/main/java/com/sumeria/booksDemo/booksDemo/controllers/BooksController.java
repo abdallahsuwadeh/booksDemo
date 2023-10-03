@@ -48,21 +48,21 @@ public class BooksController {
                 .body(result);
     }
 
-//    @GetMapping()
-//    public ResponseEntity<Book> getBookByAuthor(@RequestParam String author) {
-//        Book result = booksService.getBookByTitle(title);
-//        if(result == null) {
-//            return ResponseEntity
-//                    .status(HttpStatus.NOT_FOUND)
-//                    .header("location", "Arab Bank")
-//                    .body(null);
-//        }
-//
-//        return ResponseEntity
-//                .status(HttpStatus.OK)
-//                .header("location", "Arab Bank")
-//                .body(result);
-//    }
+    @GetMapping(params = {"author"}) // TODO explain why params is needed
+    public ResponseEntity<Book> getBookByAuthor(@RequestParam String author) {
+        Book result = booksService.getBookByAuthor(author);
+        if(result == null) {
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .header("location", "Arab Bank")
+                    .body(null);
+        }
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .header("location", "Arab Bank")
+                .body(result);
+    }
 
     @DeleteMapping("/{title}")
     public ResponseEntity<DeleteBookResposnse> deleteByTitle(@PathVariable String title) {
