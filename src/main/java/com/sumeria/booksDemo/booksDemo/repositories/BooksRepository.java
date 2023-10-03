@@ -7,7 +7,7 @@ import java.util.List;
 public interface BooksRepository {
     List<Book> findAll();
 
-    Book createBook(Book book);
+    Book createOrUpdateBook(Book book);
 
     Book getBookByTitle(String title);
 

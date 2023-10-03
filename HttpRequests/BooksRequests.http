@@ -37,4 +37,6 @@ Content-Type: application/json
 }
 
 ### Delete book by title
-POST http://localhost:8080/api/books/
+//DELETE http://localhost:8080/api/books/My_Lovely_Book
+//DELETE http://localhost:8080/api/books/book_2
+DELETE http://localhost:8080/api/books/Look_Away

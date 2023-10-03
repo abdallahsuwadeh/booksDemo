@@ -23,7 +23,7 @@ public class BooksServiceImpl implements BooksService {
 
     @Override
     public Book createBook(Book book){
-        return repository.createBook(book);
+        return repository.createOrUpdateBook(book);
     }
 
     @Override
