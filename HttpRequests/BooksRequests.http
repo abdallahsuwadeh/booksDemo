@@ -1,0 +1,40 @@
+### List all books
+
+GET http://localhost:8080/api/books
+
+### Get book by title
+
+GET http://localhost:8080/api/books/book_222
+
+### Create book
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "batata batata",
+  "author": "Noam Chomski",
+  "numberOfPages": 57
+}
+
+### Create invalid book
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "",
+  "author": "Noam Chomski",
+  "numberOfPages": 57
+}
+
+### Create invalid Firas
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Title",
+  "author": "Firas",
+  "numberOfPages": 57
+}
+
+### Delete book by title
+POST http://localhost:8080/api/books/
