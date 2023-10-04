@@ -11,8 +11,18 @@ POST http://localhost:8080/api/books
 Content-Type: application/json
 
 {
-  "title": "batata batata",
+  "title": "batata_batata",
   "author": "Noam Chomski",
+  "numberOfPages": 57
+}
+
+### Create book + map author automatically
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "batata_batata",
+  "author": "",
   "numberOfPages": 57
 }
 
