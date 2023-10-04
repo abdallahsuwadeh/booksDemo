@@ -11,5 +11,7 @@ public interface BooksService {
 
     Book getBookByTitle(String title);
 
+    Book getBookByAuthor(String author);
+
     boolean deleteBookByTitle(String title);
 }

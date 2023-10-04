@@ -11,8 +11,18 @@ POST http://localhost:8080/api/books
 Content-Type: application/json
 
 {
-  "title": "batata batata",
+  "title": "batata_batata",
   "author": "Noam Chomski",
+  "numberOfPages": 57
+}
+
+### Create book + map author automatically
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "batata_batata",
+  "author": "",
   "numberOfPages": 57
 }
 
@@ -37,4 +47,6 @@ Content-Type: application/json
 }
 
 ### Delete book by title
-POST http://localhost:8080/api/books/
+//DELETE http://localhost:8080/api/books/My_Lovely_Book
+//DELETE http://localhost:8080/api/books/book_2
+DELETE http://localhost:8080/api/books/Look_Away

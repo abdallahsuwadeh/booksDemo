@@ -5,6 +5,7 @@ import com.sumeria.booksDemo.booksDemo.models.Book;
 import com.sumeria.booksDemo.booksDemo.Dtos.BookRequest;
 import com.sumeria.booksDemo.booksDemo.services.BooksService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -16,13 +17,10 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api/books")
 @Validated
+@RequiredArgsConstructor
 public class BooksController {
 
     private final BooksService booksService;
-
-    public BooksController(BooksService booksService){
-        this.booksService = booksService;
-    }
 
     @GetMapping()
     public ResponseEntity<List<Book>> getAllBooks(){
@@ -48,21 +46,21 @@ public class BooksController {
                 .body(result);
     }
 
-//    @GetMapping()
-//    public ResponseEntity<Book> getBookByAuthor(@RequestParam String author) {
-//        Book result = booksService.getBookByTitle(title);
-//        if(result == null) {
-//            return ResponseEntity
-//                    .status(HttpStatus.NOT_FOUND)
-//                    .header("location", "Arab Bank")
-//                    .body(null);
-//        }
-//
-//        return ResponseEntity
-//                .status(HttpStatus.OK)
-//                .header("location", "Arab Bank")
-//                .body(result);
-//    }
+    @GetMapping(params = {"author"}) // TODO explain why params is needed
+    public ResponseEntity<Book> getBookByAuthor(@RequestParam String author) {
+        Book result = booksService.getBookByAuthor(author);
+        if(result == null) {
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .header("location", "Arab Bank")
+                    .body(null);
+        }
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .header("location", "Arab Bank")
+                .body(result);
+    }
 
     @DeleteMapping("/{title}")
     public ResponseEntity<DeleteBookResposnse> deleteByTitle(@PathVariable String title) {
