@@ -11,4 +11,9 @@ import lombok.Setter;
 public class TitleToAuthorResponse {
     private String firstName;
     private String lastName;
+
+    public TitleToAuthorResponse(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 }

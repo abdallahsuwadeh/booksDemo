@@ -11,15 +11,20 @@ import java.util.List;
 public class BooksRepositoryImpl implements BooksRepository {
 
     // TODO use something thread safe
-    private final HashMap<String, Book> data;
+    private HashMap<String, Book> data;
 
     public BooksRepositoryImpl(){
+        initTheData();
+    }
+
+    public void initTheData(){
         this.data = new HashMap<String, Book>();
         this.data.put("My_Lovely_Book", new Book("My_Lovely_Book", "Talal Mahmoud", 88));
         this.data.put("book_2", new Book("book_2", "Abed Mohammad", 23));
         this.data.put("Look_Away", new Book("Look_Away", "Mahmoud Blabla", 324));
         this.data.put("My_Lovely_Book2", new Book("My_Lovely_Book2", "Talal Mahmoud", 828));
         this.data.put("My_Lovely_Book3", new Book("My_Lovely_Book3", "Talal Mahmoud", 11));
+
     }
 
     public List<Book> findAll(){
