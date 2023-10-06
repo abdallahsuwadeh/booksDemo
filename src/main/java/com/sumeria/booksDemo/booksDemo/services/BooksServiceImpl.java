@@ -16,7 +16,7 @@ public class BooksServiceImpl implements BooksService {
     private final TitleToAuthorMapperWebClient authorMapperWebClient;
 
     @Autowired
-    BooksServiceImpl(
+    public BooksServiceImpl(
             BooksRepository repository,
             TitleToAuthorMapperWebClient authorMapperWebClient,
             @Value("${booksDemo.enableAutoAuthorMapping}")

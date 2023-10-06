@@ -5,6 +5,8 @@ import com.sumeria.booksDemo.booksDemo.models.Book;
 import java.util.List;
 
 public interface BooksRepository {
+    void initTheData();
+
     List<Book> findAll();
 
     Book createOrUpdateBook(Book book);
